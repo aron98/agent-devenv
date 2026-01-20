@@ -4,9 +4,9 @@ A phased checklist for delivering a fully functional devenv CLI and MCP stack. E
 
 ## Phase 0 - Project scaffolding
 - [x] Initialize Go module and basic repo structure.
-- [ ] Add minimal CLI entrypoint with command routing.
-- [ ] Define core packages (config, worktree, ports, compose, control, mcp).
-- [ ] Establish logging and error helpers.
+- [x] Add minimal CLI entrypoint with command routing.
+- [x] Define core packages (config, worktree, ports, compose, control, mcp).
+- [x] Establish logging and error helpers.
 
 ## Phase 1 - Config and validation
 - [x] Parse `.devenv/config.yml` into typed config structs.
