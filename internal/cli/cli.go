@@ -3,10 +3,11 @@ package cli
 import (
 	"fmt"
 	"io"
+
+	"github.com/aron98/agent-devenv/internal/errs"
 )
 
 const (
-	exitOK             = 0
 	exitNotImplemented = 1
 	exitUsage          = 2
 )
@@ -20,29 +21,27 @@ func New(out io.Writer, err io.Writer) *CLI {
 	return &CLI{out: out, err: err}
 }
 
-func (c *CLI) Run(args []string) int {
+func (c *CLI) Run(args []string) error {
 	if len(args) == 0 {
 		c.printUsage(c.err)
-		return exitUsage
+		return errs.New(exitUsage, "no command provided", "run 'devenv help' for usage")
 	}
 
 	cmd := args[0]
 	switch cmd {
 	case "help", "-h", "--help":
 		c.printUsage(c.out)
-		return exitOK
+		return nil
 	case "init", "up", "down", "list", "status", "ports", "service", "agent", "stdio":
 		return c.notImplemented(cmd)
 	default:
-		fmt.Fprintf(c.err, "unknown command: %s\n", cmd)
 		c.printUsage(c.err)
-		return exitUsage
+		return errs.New(exitUsage, fmt.Sprintf("unknown command: %s", cmd), "run 'devenv help' for usage")
 	}
 }
 
-func (c *CLI) notImplemented(cmd string) int {
-	fmt.Fprintf(c.err, "%s: not implemented\n", cmd)
-	return exitNotImplemented
+func (c *CLI) notImplemented(cmd string) error {
+	return errs.New(exitNotImplemented, fmt.Sprintf("%s: not implemented", cmd), "see IMPLEMENTATION_PLAN.md for status")
 }
 
 func (c *CLI) printUsage(out io.Writer) {
