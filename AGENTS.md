@@ -21,6 +21,10 @@
 - Enforce port exposure rules based on placeholders in `.devenv/config.yml`.
 - Agents must not control services outside their environment.
 
+## Testing expectations
+- Every change must include tests or an explicit smoke test plan.
+- Run `go test ./...` or the narrowest relevant scope before reporting completion.
+
 ## Operational notes
 - Each env has a git worktree under `.devenv/worktrees/<env>`.
 - Rendered Compose files live under `.devenv/instances/<env>/compose.yaml`.
