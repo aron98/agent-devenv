@@ -13,7 +13,7 @@ A phased checklist for delivering a fully functional devenv CLI and MCP stack. E
 - [x] Validate config schema and required fields. (test: unit tests for `ValidateProjectConfig`)
 - [x] Implement env name normalization (lowercase, spaces to `-`, collapse `-`, trim `-`). (test: unit tests for `NormalizeEnvName`)
 - [x] Validate normalized env name against `^[a-z0-9][a-z0-9-_]{0,62}$`. (test: unit tests for `ValidateEnvName`)
-- [ ] Load user config and resolve precedence. (test: unit tests for config precedence rules)
+- [x] Load user config and resolve precedence. (test: unit tests for config precedence rules)
 
 ## Phase 2 - Instance state and filesystem layout
 - [ ] Define instance state schema and structs. (test: unit tests for state serialization)
