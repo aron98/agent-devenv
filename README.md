@@ -4,6 +4,11 @@ Go CLI for spinning up isolated, per-task development environments from a single
 
 Use `devenv init` to add a repo template, `devenv up <env>` to create and start an environment, and `devenv agent <env> "<prompt>"` to launch a coding agent inside it. The CLI also exposes a repo-scoped MCP server (`devenv stdio`) for orchestrators that need to list envs, manage services, and control agents without direct engine access.
 
+## Development Status
+- Phases 1-3 are complete: config parsing/validation, instance state/layout, and worktree management in internal packages.
+- CLI commands are still stubbed while backend packages mature.
+- CI runs `go build ./...` and `go test ./...` on PR open/sync and pushes to `main`.
+
 ## CLI Contract
 - Commands: `init`, `up`, `down`, `list`, `status`, `ports`, `service <op>`, `agent`, `stdio`.
 - `up` normalizes env names (lowercase, spaces to `-`, collapse `-`) and requires `--force` for dirty worktrees.
