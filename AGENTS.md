@@ -28,4 +28,5 @@
 ## Operational notes
 - Each env has a git worktree under `.devenv/worktrees/<env>`.
 - Rendered Compose files live under `.devenv/instances/<env>/compose.yaml`.
+- Worktree lifecycle uses `git worktree add/remove`; dirty worktrees (including untracked files) require `--force`.
 - Use `devenv down <env> [--purge]` to stop or remove an environment.

@@ -22,10 +22,11 @@ A phased checklist for delivering a fully functional devenv CLI and MCP stack. E
 - [x] Ensure `.devenv/worktrees/` and `.devenv/instances/` are gitignored. (test: init output asserts `.gitignore` entries)
 
 ## Phase 3 - Worktree management
-- [ ] Implement worktree create (`git worktree add`) with ref support. (test: integration test using temp repo)
-- [ ] Detect dirty worktrees and require `--force` to proceed. (test: integration test with modified file)
-- [ ] Implement worktree removal for purge. (test: integration test removing worktree)
-- [ ] Add unit tests for worktree path and normalization behavior. (test: `go test ./internal/worktree`)
+- [x] Implement worktree create (`git worktree add`) with ref support. (test: integration test using temp repo)
+- [x] Detect dirty worktrees and require `--force` to proceed. (test: integration test with modified file)
+- [x] Implement worktree removal for purge. (test: integration test removing worktree)
+- [x] Add unit tests for worktree path and normalization behavior. (test: `go test ./internal/worktree`)
+- [x] Note: worktree helpers are ready for CLI wiring in Phase 10.
 
 ## Phase 4 - Port leasing
 - [ ] Create SQLite lease DB schema and migrations. (test: migration tests with temp DB)
