@@ -16,10 +16,10 @@ A phased checklist for delivering a fully functional devenv CLI and MCP stack. E
 - [x] Load user config and resolve precedence. (test: unit tests for config precedence rules)
 
 ## Phase 2 - Instance state and filesystem layout
-- [ ] Define instance state schema and structs. (test: unit tests for state serialization)
-- [ ] Implement instance directory creation and cleanup. (test: unit tests with temp directories)
-- [ ] Write and read `.devenv/instances/<env>/state.json`. (test: round-trip state tests)
-- [ ] Ensure `.devenv/worktrees/` and `.devenv/instances/` are gitignored. (test: init output asserts `.gitignore` entries)
+- [x] Define instance state schema and structs. (test: unit tests for state serialization)
+- [x] Implement instance directory creation and cleanup. (test: unit tests with temp directories)
+- [x] Write and read `.devenv/instances/<env>/state.json`. (test: round-trip state tests)
+- [x] Ensure `.devenv/worktrees/` and `.devenv/instances/` are gitignored. (test: init output asserts `.gitignore` entries)
 
 ## Phase 3 - Worktree management
 - [ ] Implement worktree create (`git worktree add`) with ref support. (test: integration test using temp repo)
